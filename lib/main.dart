@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'introduction_screen/introduction_screen_view.dart';
+
 void main()
 {
   runApp(IntroductionScreen());
@@ -9,6 +11,12 @@ class IntroductionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp( debugShowCheckedModeBanner: false, home: IntroductionScreenView(
+
+    ),
+     routes: {
+
+     },
+    );
   }
 }
