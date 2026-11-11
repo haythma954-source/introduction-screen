@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:introduction_screen/core/utils/app_routes/app_routes.dart';
+import 'package:introduction_screen/sebiha/sebiha.dart';
 
 import 'introduction_screen/introduction_screen_view.dart';
 
@@ -11,12 +13,16 @@ class IntroductionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( debugShowCheckedModeBanner: false, home: IntroductionScreenView(
+    return MaterialApp( debugShowCheckedModeBanner: false,
 
-    ),
-     routes: {
 
-     },
+
+    initialRoute: AppRoutes.introductionScreen,
+      routes: {
+      AppRoutes.introductionScreen:(context)=>IntroductionScreenView(),
+        AppRoutes.sebiha:(context)=>Sebiha(),
+      },
+
     );
   }
 }

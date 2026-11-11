@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:introduction_screen/core/utils/app_routes/app_routes.dart';
 import 'package:introduction_screen/core/utils/appcolors/app_colors.dart';
 import 'package:introduction_screen/screenviews/screenviews.dart';
 import 'package:introduction_screen/text_title/text_title.dart';
 import 'package:introduction_screen/textdescription/text_description.dart';
 
-import '../core/utils/textformat/text_format.dart';
+import '../core/utils/custom_text/custom_text.dart';
 
 class IntroductionScreenView extends StatefulWidget {
   const IntroductionScreenView({super.key});
@@ -74,9 +75,9 @@ List<String>descriptions=[TextDescription.description1,
           ),
         ),
 
-        TextFormat(text: titles[currentPage],fontSize: 20,),
+        CustomText(text: titles[currentPage],fontSize: 20,),
         SizedBox(height: 30,),
-        TextFormat(text:descriptions[currentPage],fontSize: 16,),
+        CustomText(text:descriptions[currentPage],fontSize: 16,),
 
 
         Row(
@@ -126,8 +127,8 @@ List<String>descriptions=[TextDescription.description1,
                       curve: Curves.easeInOut,
                     );
                   } else {
+                          Navigator.of(context).pushNamed(AppRoutes.sebiha);
 
-                    debugPrint('Introduction completed!');
                   }
                 },
                 child: Text(style: TextStyle(color: AppColors.mainColor),
